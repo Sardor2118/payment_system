@@ -31,7 +31,7 @@ class Card(Base):
 class Transaction(Base):
     __tablename__ = 'transactions'
     id = Column(Integer, primary_key=True, autoincrement=True)
-    card_from = Column(BigInteger, ForeighKey("cards.card_number"), nullable=False)
+    card_from = Column(BigInteger, ForeignKey("cards.card_number"), nullable=False)
     amount = Column(Float, nullable=False)
     card_to = Column(BigInteger, ForeignKey("cards.card_number"), nullable=False)
     transfer_time = Column(DateTime, nullable=False)
