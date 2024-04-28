@@ -39,6 +39,5 @@ class Transactions(Base):
     amount = Column(Float, nullable=False)
     card_to = Column(BigInteger, ForeignKey("cards.card_number"), nullable=False)
     transfer_time = Column(DateTime, nullable=False)
-
     card_from_fk = relationship(Card, lazy="subquery")
     card_to_fk = relationship(Card, lazy="subquery")
